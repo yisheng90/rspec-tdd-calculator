@@ -19,6 +19,17 @@ class Calculator
      (num.is_a? Integer)?  @result += num : false
   end
 
+  def sub num
+    (num.is_a? Integer)?  @result -= num : false
+  end
+
+  def multiply num
+    (num.is_a? Integer)?  @result *= num : false
+  end
+
+  def divide num
+    (num.is_a? Integer)?  @result /= num : false
+  end
 end
 
 
