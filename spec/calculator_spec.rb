@@ -27,20 +27,43 @@ describe Calculator do
 
     #reset
     it "should reset the calculator result to given input" do
-      expect(@my_calculator.reset(5)).to eq(5)
+      @my_calculator.reset(5)
+      expect(@my_calculator.result).to eq(5)
     end
 
     #addition - normal case
     it "should add the input to the current calculator result" do
-      expect(@my_calculator.add(6)).to eq(11)
+      @my_calculator.add(6)
+      expect(@my_calculator.result).to eq(11)
     end
     #addition - negative input case
     it "should add the negative input to the current calculator result" do
-      expect(@my_calculator.add(-11)).to eq(0)
+      @my_calculator.add(-11)
+      expect(@my_calculator.result).to eq(0)
     end
     #addition - invalid input case
     it "should return false if input is not an integer" do
-      expect(@my_calculator.add($)).to eq(false)
+
+      expect(  @my_calculator.add("i")).to eq(false)
     end
   end
+end
+
+# Test for Sub
+describe "This is to test the Sub method" do
+  #sub - normal case
+  it "should substract the input to the current calculator result" do
+    @my_calculator.substract(6)
+    expect(@my_calculator.result).to eq(-6)
+  end
+  #sub - negative input case
+  it "should add the negative input to the current calculator result" do
+    @my_calculator.substract(-1)
+    expect(@my_calculator.result).to eq(7)
+  end
+  #sub - invalid input case
+  it "should return false if input is not an integer" do
+    expect(  @my_calculator.substract("i")).to eq(false)
+  end
+end
 end

@@ -1,6 +1,5 @@
 class Calculator
 
-  attr_reader :result
   # your class goes here
   attr_reader :result
 
@@ -10,6 +9,14 @@ class Calculator
 
   def result
     return @result
+  end
+
+  def reset num
+    @result = num
+  end
+
+  def add num
+     (num.is_a? Integer)?  @result += num : false
   end
 
 end
