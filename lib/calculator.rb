@@ -12,12 +12,17 @@ class Calculator
   end
 
   def reset num
-    @result = num
+    self.result = num
   end
 
   def add num
-     (num.is_a? Integer)?  @result += num : false
+     (num.is_a? Integer)?  self.result += num : false
+     self
   end
+
+  private
+
+  attr_writer :result
 
 end
 

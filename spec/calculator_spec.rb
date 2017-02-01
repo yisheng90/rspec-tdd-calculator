@@ -47,7 +47,6 @@ describe Calculator do
       expect(  @my_calculator.add("i")).to eq(false)
     end
   end
-end
 
 # Test for Sub
 describe "This is to test the Sub method" do
