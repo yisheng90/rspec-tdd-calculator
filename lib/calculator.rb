@@ -17,20 +17,61 @@ class Calculator
   end
 
   def add num
-     (num.is_a? Integer)?  @result += num : false
+
+       if num.is_a? Integer
+        @result += num
+      else
+        return false
+      end
+      self
   end
 
   def sub num
-    (num.is_a? Integer)?  @result -= num : false
+    if num.is_a? Integer
+     @result -= num
+   else
+     return false
+   end
+   self
+
   end
 
   def multiply num
-    (num.is_a? Integer)?  @result *= num : false
+    if num.is_a? Integer
+     @result *= num
+   else
+     return false
+   end
+   self
+
   end
 
   def divide num
-    (num.is_a? Integer)?  @result /= num : false
+    if num.is_a? Integer
+     @result /= num
+   else
+     return false
+   end
+   self
   end
+
+  def operation action, num
+    case action
+    when 'add'
+      add num
+    when 'sub'
+      sub num
+    when 'multiply'
+      multiply(num)
+    when 'divide'
+      divide num
+    else
+      return "Please enter a valid operation"
+    end
+  end
+
+
+
 end
 
 
