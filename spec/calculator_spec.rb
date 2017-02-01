@@ -20,6 +20,7 @@ describe Calculator do
       expect(@my_calculator.result).to eq(1)
     end
 
+
     it "current result must be read only" do
       expect(@my_calculator.result).to eq(1)
     end
@@ -45,4 +46,23 @@ describe Calculator do
       expect(@my_calculator.add("i")).to eq(false)
     end
   end
+end
+
+# Test for Sub
+describe "This is to test the Sub method" do
+  #sub - normal case
+  it "should substract the input to the current calculator result" do
+    @my_calculator.substract(6)
+    expect(@my_calculator.result).to eq(-6)
+  end
+  #sub - negative input case
+  it "should add the negative input to the current calculator result" do
+    @my_calculator.substract(-1)
+    expect(@my_calculator.result).to eq(7)
+  end
+  #sub - invalid input case
+  it "should return false if input is not an integer" do
+    expect(  @my_calculator.substract("i")).to eq(false)
+  end
+end
 end
