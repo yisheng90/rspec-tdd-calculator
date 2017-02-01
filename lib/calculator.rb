@@ -12,17 +12,25 @@ class Calculator
   end
 
   def reset num
-    self.result = num
+    @result = num
   end
 
   def add num
-     (num.is_a? Integer)?  self.result += num : false
+     (num.is_a? Integer)?  @result += num : false
      self
   end
 
-  private
+  def sub num
+    (num.is_a? Integer)?  @result -= num : false
+  end
 
-  attr_writer :result
+  def multiply num
+    (num.is_a? Integer)?  @result *= num : false
+  end
+
+  def divide num
+    (num.is_a? Integer)?  @result /= num : false
+  end
 
 end
 
