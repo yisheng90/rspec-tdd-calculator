@@ -10,4 +10,12 @@ class Calculator
     return @result
   end
 
+  def reset num
+    @result = num
+  end
+
+  def add num
+    
+
+  end
 end
