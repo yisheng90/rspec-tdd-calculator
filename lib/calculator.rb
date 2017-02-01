@@ -5,6 +5,7 @@ class Calculator
 
   def initialize num
     @result = num
+    @result_history = []
   end
 
   def result
