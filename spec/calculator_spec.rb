@@ -20,12 +20,5 @@ describe Calculator do
       expect(@my_calculator.result).to eq(1)
     end
 
-    before(:context) do
-      @my_calculator.result  = 2
-    end
-
-    it "current result must be read only" do
-      expect(@my_calculator.result).to eq(1)
-    end
   end
 end
