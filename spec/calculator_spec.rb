@@ -124,8 +124,15 @@ describe "This is to test the undo method" do
   end
 
   it "it should undo the last two" do
-    @my_calculator.undo.undo()
-    expect(@my_calculator.result).to eq(30)
+    @my_calculator.undo().undo()
+    expect(@my_calculator.result).to eq(-15)
+  end
+end
+
+describe "This is to test the redo method" do
+  it "it should redo the latest operation" do
+    @my_calculator.redo()
+    expect(@my_calculator.result).to eq(-14)
   end
 end
 end
