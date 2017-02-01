@@ -20,5 +20,27 @@ describe Calculator do
       expect(@my_calculator.result).to eq(1)
     end
 
+
+    it "current result must be read only" do
+      expect(@my_calculator.result).to eq(1)
+    end
+
+    #reset
+    it "should reset the calculator result to given input" do
+      expect(@my_calculator.reset(5)).to eq(5)
+    end
+
+    #addition - normal case
+    it "should add the input to the current calculator result" do
+      expect(@my_calculator.add(6)).to eq(11)
+    end
+    #addition - negative input case
+    it "should add the negative input to the current calculator result" do
+      expect(@my_calculator.add(-11)).to eq(0)
+    end
+    #addition - invalid input case
+    it "should return false if input is not an integer" do
+      expect(@my_calculator.add($)).to eq(false)
+    end
   end
 end
